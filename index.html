@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lado B Nutrición | Palermo, CABA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #faf7f4;
+  --blush: #f5ede8;
+  --terracotta: #c96a4a;
+  --terracotta-light: #e8906f;
+  --dark: #1a1a1a;
+  --text: #3a3a3a;
+  --lime: #c8e63c;
+  --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 64px;
+  transition: box-shadow .3s;
+}
+
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
+
+.nav-logo img {
+  height: 36px;
+  filter: invert(1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--lime); }
+
+.nav-cta {
+  background: var(--terracotta);
+  color: white !important;
+  padding: .5rem 1.25rem;
+  border-radius: 2px;
+  font-weight: 500 !important;
+}
+
+.nav-cta:hover { background: var(--terracotta-light); color: white !important; }
+
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: white; transition: .3s; }
+
+/* HERO */
+#inicio {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+}
+
+.hero-logo {
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+.hero-logo img {
+  width: min(420px, 70vw);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  opacity: .4;
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: var(--dark);
+  animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* SECTIONS */
+section { padding: 6rem 5%; }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--dark);
+}
+
+/* FADE IN ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* QUIÉNES SOMOS */
+#quienes {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 7rem 8%;
+}
+
+.quienes-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 2rem;
+  color: var(--dark);
+}
+
+.quienes-text p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.quienes-img {
+  position: relative;
+}
+
+.quienes-img img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+}
+
+.dots-decoration {
+  position: absolute;
+  top: -20px; left: -20px;
+  width: 120px; height: 120px;
+  background-image: radial-gradient(circle, #e8c5b8 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  z-index: -1;
+}
+
+/* TURNO */
+#turno {
+  background: var(--dark);
+  text-align: center;
+  padding: 6rem 5%;
+}
+
+#turno h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+#turno p {
+  color: #aaa;
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,.35);
+}
+
+.btn-wa svg { width: 22px; height: 22px; fill: white; }
+
+/* CÓMO TRABAJAMOS */
+#como {
+  background: var(--blush);
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 4px;
+  text-align: left;
+  transition: background .3s, color .3s, transform .2s;
+  cursor: default;
+}
+
+.card:hover, .card.active {
+  background: var(--terracotta);
+  transform: translateY(-4px);
+}
+
+.card:hover h3, .card.active h3,
+.card:hover p, .card.active p { color: white; }
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  transition: color .3s;
+}
+
+.card p {
+  font-size: .9rem;
+  line-height: 1.75;
+  color: var(--text);
+  transition: color .3s;
+}
+
+/* INBODY */
+#inbody {
+  background: var(--white);
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.85);
+  transition: filter .3s;
+}
+
+.video-wrapper:hover .video-thumb { filter: brightness(.7); }
+
+.play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px; height: 70px;
+  background: rgba(255,255,255,.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s, background .2s;
+}
+
+.video-wrapper:hover .play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: white;
+}
+
+.play-btn svg { width: 28px; height: 28px; fill: var(--terracotta); margin-left: 4px; }
+
+.video-embed { display: none; width: 100%; aspect-ratio: 16/9; border: none; }
+
+/* TESTIMONIOS */
+#testimonios {
+  background: var(--blush);
+  text-align: center;
+}
+
+.testimonial-slider {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial {
+  display: none;
+  animation: fadeIn .5s ease;
+}
+
+.testimonial.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--terracotta);
+  line-height: .5;
+  margin-bottom: 1.5rem;
+  opacity: .4;
+}
+
+.testimonial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--terracotta);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.testimonial-text {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.stars { color: #f5a623; font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.testimonial-author img {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--terracotta);
+}
+
+.author-name { font-weight: 500; font-size: .95rem; }
+
+.slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.slider-btn {
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--terracotta);
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--terracotta);
+  transition: background .2s, color .2s;
+}
+
+.slider-btn:hover { background: var(--terracotta); color: white; }
+
+.slider-dots { display: flex; gap: .5rem; }
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #d4b5a8;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.dot.active { background: var(--terracotta); }
+
+/* MAPA */
+#donde {
+  background: var(--white);
+  text-align: center;
+}
+
+.map-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0,0,0,.1);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+}
+
+.map-address {
+  margin-top: 1.5rem;
+  font-size: .95rem;
+  color: #666;
+}
+
+.map-address strong { color: var(--dark); }
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: #888;
+  text-align: center;
+  padding: 2rem 5%;
+  font-size: .8rem;
+}
+
+footer a { color: var(--lime); text-decoration: none; }
+
+/* WHATSAPP FLOAT */
+.wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 200;
+  width: 54px; height: 54px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,.4);
+  transition: transform .2s;
+}
+
+.wa-float:hover { transform: scale(1.1); }
+.wa-float svg { width: 28px; height: 28px; fill: white; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark); padding: 1.5rem 5%; gap: 1.25rem; }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  #quienes { grid-template-columns: 1fr; padding: 4rem 6%; }
+  .cards { grid-template-columns: 1fr; }
+  section { padding: 4rem 6%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#inicio">
+    <!-- Reemplazá src con la URL de tu logo en GitHub -->
+    <img src="images/logo.png" alt="Lado B Nutrición">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#quienes">Quiénes somos</a></li>
+    <li><a href="#como">Cómo trabajamos</a></li>
+    <li><a href="#inbody">InBody</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#donde">Dónde estamos</a></li>
+    <li><a href="https://wa.me/5491185246690?text=Hola%2C+quiero+reservar+una+consulta" target="_blank" class="nav-cta">Reservá tu turno</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" style="position:relative;">
+  <div class="hero-logo reveal">
+    <!-- Reemplazá src con la URL de tu logo en GitHub -->
+    <img src="images/logo.png" alt="Lado B Nutrición" style="width:min(420px,70vw);">
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes">
+  <div class="quienes-text reveal">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos un centro de nutrición ubicado en Palermo. Trabajamos con tecnología <strong>InBody</strong>, que nos permite evaluar tu composición corporal de forma precisa y hacer un seguimiento real y preciso.</p>
+    <p>No creemos en dietas restrictivas ni en soluciones rápidas o temporales. Nuestro enfoque se basa en la <strong>alimentación consciente</strong>, ayudándote a construir hábitos saludables y sostenibles en el tiempo, sin pasar hambre y sin "sufrir" el proceso.</p>
+    <p>Nos especializamos en <strong>sobrepeso leve y obesidad</strong>, <strong>nutrición deportiva</strong>, <strong>alimentación vegana y vegetariana</strong>, entre otras áreas. Nuestro objetivo es acompañarte de manera integral para que logres cambios reales, duraderos y que se adapten a vos.</p>
+  </div>
+  <div class="quienes-img reveal">
+    <div class="dots-decoration"></div>
+    <!-- Reemplazá src con tus imágenes subidas a GitHub -->
+    <img src="images/inbody-machine.jpg" alt="Tecnología InBody">
+  </div>
+</section>
+
+<!-- RESERVÁ TU TURNO -->
+<section id="turno" class="reveal">
+  <h2>Reservá tu turno</h2>
+  <p>Contactanos por WhatsApp y coordinamos tu primera consulta. Te esperamos en Palermo, CABA.</p>
+  <a class="btn-wa" href="https://wa.me/5491185246690?text=Hola%2C+quiero+reservar+una+consulta+en+Lado+B+Nutrici%C3%B3n" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
+    Escribinos por WhatsApp
+  </a>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section id="como">
+  <h2 class="section-title reveal">¿Cómo trabajamos?</h2>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Analizamos tu composición corporal</h3>
+      <p>A través de un sistema de bioimpedancia obtenemos en detalle <strong>peso, masa grasa, masa muscular, índice de masa corporal, grasa segmental, control de peso (peso ideal)</strong>, entre otros resultados.</p>
+    </div>
+    <div class="card reveal">
+      <h3>Planteamos tu objetivo personalizado</h3>
+      <p>A partir de los resultados definimos un <strong>objetivo realista</strong> y alcanzable según tus necesidades y estilo de vida, ya sea <strong>bajar grasa, aumentar masa muscular, mejorar el rendimiento o cuidar tu salud.</strong></p>
+    </div>
+    <div class="card active reveal">
+      <h3>Armamos un plan nutricional a tu medida</h3>
+      <p>Diseñamos un plan nutricional 100% personalizado, <strong>adaptado a tu objetivo, gustos, rutina y contexto</strong>. No se trata de dietas genéricas, sino de una <strong>estrategia práctica y sostenible en el tiempo</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INBODY -->
+<section id="inbody">
+  <h2 class="section-title reveal">INBODY</h2>
+  <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
+    <!-- Reemplazá src con tu thumbnail subida a GitHub -->
+    <img class="video-thumb" src="images/inbody-video-thumb.jpg" alt="Video InBody">
+    <div class="play-btn">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+    <!-- Reemplazá VIDEO_ID con el ID de tu video de YouTube -->
+    <iframe class="video-embed" id="videoEmbed" allow="autoplay" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <h2 class="section-title reveal">Testimonios de quienes nos eligen</h2>
+  <div class="testimonial-slider reveal">
+    <div class="testimonial active">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Mega recomendado"</div>
+      <p class="testimonial-text">Todo súper profesional y la mejor calidad. Nutricionistas dedicadas y específicas a las necesidades de cada paciente. Mega recomendado!</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <img src="images/testimonio-1.jpg" alt="Tatiana Paladini">
+        <span class="author-name">Tatiana Paladini</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Un antes y un después"</div>
+      <p class="testimonial-text">Encontré el acompañamiento que necesitaba. Por primera vez en años no siento que estoy a dieta, sino que estoy aprendiendo a comer de verdad.</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <img src="images/testimonio-2.jpg" alt="Paciente">
+        <span class="author-name">Cliente de Google</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Resultados reales"</div>
+      <p class="testimonial-text">La evaluación con InBody me pareció increíble. Por fin tengo datos concretos de cómo está mi cuerpo y un plan que tiene sentido para mí.</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <img src="images/testimonio-3.jpg" alt="Paciente">
+        <span class="author-name">Cliente de Google</span>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button class="slider-btn" onclick="changeSlide(-1)">←</button>
+      <div class="slider-dots" id="dots"></div>
+      <button class="slider-btn" onclick="changeSlide(1)">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- DÓNDE ESTAMOS -->
+<section id="donde">
+  <h2 class="section-title reveal">Encontranos</h2>
+  <div class="map-wrapper reveal">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.5!2d-58.4317!3d-34.5876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzE1LjQiUyA1OMKwMjUnNTQuMSJX!5e0!3m2!1ses!2sar!4v1234567890"
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+  <p class="map-address reveal"><strong>Charcas 3331</strong>, Palermo, Ciudad Autónoma de Buenos Aires</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Lado B Nutrición · Palermo, CABA · <a href="https://wa.me/5491185246690" target="_blank">WhatsApp</a></p>
+</footer>
+
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/5491185246690?text=Hola%2C+quiero+reservar+una+consulta+en+Lado+B+Nutrici%C3%B3n" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
+
+<script>
+// NAV scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Video
+function playVideo() {
+  const wrapper = document.getElementById('videoWrapper');
+  const embed = document.getElementById('videoEmbed');
+  const thumb = wrapper.querySelector('.video-thumb');
+  const btn = wrapper.querySelector('.play-btn');
+  // Reemplazá TU_VIDEO_ID con el ID real de YouTube
+  embed.src = 'https://www.youtube.com/embed/TU_VIDEO_ID?autoplay=1';
+  embed.style.display = 'block';
+  thumb.style.display = 'none';
+  btn.style.display = 'none';
+  wrapper.onclick = null;
+}
+
+// Testimonios slider
+let current = 0;
+const slides = document.querySelectorAll('.testimonial');
+const dotsContainer = document.getElementById('dots');
+
+slides.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  dotsContainer.appendChild(d);
+});
+
+function goTo(n) {
+  slides[current].classList.remove('active');
+  document.querySelectorAll('.dot')[current].classList.remove('active');
+  current = (n + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  document.querySelectorAll('.dot')[current].classList.add('active');
+}
+
+function changeSlide(dir) { goTo(current + dir); }
+</script>
+</body>
+</html>
