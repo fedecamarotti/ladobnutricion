@@ -536,12 +536,46 @@ footer a { color: var(--lime); text-decoration: none; }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark); padding: 1.5rem 5%; gap: 1.25rem; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    background: var(--dark);
+    padding: 1.5rem 6%;
+    gap: 1.25rem;
+  }
   .nav-links.open { display: flex; }
+  .nav-links li::before { display: none; }
+  .nav-links a { font-size: .9rem; }
+  .nav-cta { background: #25d366 !important; display: inline-block; width: fit-content; }
+
   .hamburger { display: flex; }
+
+  /* Reemplazar hamburger por botón "Menú" naranja */
+  .hamburger {
+    background: var(--terracotta);
+    border: none;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: .45rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    align-items: center;
+    gap: .4rem;
+  }
+  .hamburger span { display: none; }
+  .hamburger::before { content: 'Menú'; }
+
   #quienes { grid-template-columns: 1fr; padding: 4rem 6%; }
   .cards { grid-template-columns: 1fr; }
   section { padding: 4rem 6%; }
+
+  #turno p { white-space: normal !important; font-size: .95rem; }
 }
 </style>
 </head>
