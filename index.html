@@ -202,7 +202,7 @@ section { padding: 6rem 5%; }
   border-radius: 4px;
   object-fit: cover;
   display: block;
-  margin-left: auto;
+  margin-right: auto;
   position: relative;
   z-index: 1;
   box-shadow: 0 8px 30px rgba(0,0,0,.12);
@@ -210,9 +210,9 @@ section { padding: 6rem 5%; }
 
 .quienes-img .img-overlay {
   position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 38%;
+  bottom: -10px;
+  right: 0;
+  width: 48%;
   border-radius: 4px;
   object-fit: cover;
   border: 4px solid white;
@@ -223,7 +223,7 @@ section { padding: 6rem 5%; }
 .dots-decoration {
   position: absolute;
   bottom: 60px;
-  left: 28%;
+  left: 30%;
   width: 180px; height: 180px;
   background-image: radial-gradient(circle, #e8c5b8 1.5px, transparent 1.5px);
   background-size: 14px 14px;
@@ -248,10 +248,10 @@ section { padding: 6rem 5%; }
   color: #aaa;
   font-size: 1.05rem;
   margin-bottom: 2.5rem;
-  max-width: 500px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7;
+  line-height: 2;
 }
 
 .btn-wa {
@@ -262,7 +262,7 @@ section { padding: 6rem 5%; }
   color: white;
   text-decoration: none;
   padding: 1rem 2.5rem;
-  border-radius: 3px;
+  border-radius: 20px;
   font-size: 1rem;
   font-weight: 500;
   transition: transform .2s, box-shadow .2s;
@@ -384,6 +384,7 @@ section { padding: 6rem 5%; }
 .testimonial {
   display: none;
   animation: fadeIn .5s ease;
+  min-height: 280px;
 }
 
 .testimonial.active { display: block; }
@@ -619,7 +620,7 @@ footer a { color: var(--lime); text-decoration: none; }
 <!-- INBODY -->
 <section id="inbody">
   <h2 class="section-title reveal">INBODY</h2>
-  <p class="reveal" style="text-align:center; max-width:600px; margin: -2rem auto 2.5rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé paso a paso cómo funciona nuestro sistema InBody</p>
+  <p class="reveal" style="text-align:center; max-width:600px; margin: -.5rem auto 2rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé paso a paso cómo funciona nuestro sistema InBody</p>
   <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
     <img class="video-thumb" src="images/inbody-video-thumb.jpg" alt="Video InBody">
     <div class="play-btn">
@@ -778,7 +779,7 @@ function playVideo() {
   const thumb = wrapper.querySelector('.video-thumb');
   const btn = wrapper.querySelector('.play-btn');
   // Reemplazá TU_VIDEO_ID con el ID real de YouTube
-  embed.src = 'https://www.youtube.com/embed/TU_VIDEO_ID?autoplay=1';
+  embed.src = 'https://www.youtube.com/embed/uQ2S4Zc5KO0?autoplay=1';
   embed.style.display = 'block';
   thumb.style.display = 'none';
   btn.style.display = 'none';
