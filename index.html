@@ -198,32 +198,36 @@ section { padding: 6rem 5%; }
 }
 
 .quienes-img .img-main {
-  width: 75%;
+  width: 62%;
   border-radius: 4px;
   object-fit: cover;
   display: block;
   margin-left: auto;
+  position: relative;
+  z-index: 1;
   box-shadow: 0 8px 30px rgba(0,0,0,.12);
 }
 
 .quienes-img .img-overlay {
   position: absolute;
-  bottom: -20px;
+  bottom: 20px;
   left: 0;
   width: 38%;
   border-radius: 4px;
   object-fit: cover;
   border: 4px solid white;
   box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  z-index: 2;
 }
 
 .dots-decoration {
   position: absolute;
-  top: -20px; left: -20px;
-  width: 120px; height: 120px;
+  bottom: 60px;
+  left: 28%;
+  width: 180px; height: 180px;
   background-image: radial-gradient(circle, #e8c5b8 1.5px, transparent 1.5px);
   background-size: 14px 14px;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* TURNO */
@@ -428,6 +432,14 @@ section { padding: 6rem 5%; }
 
 .author-name { font-weight: 500; font-size: .95rem; }
 
+.author-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #e8c5b8;
+  border: 2px solid var(--terracotta);
+  flex-shrink: 0;
+}
+
 .slider-nav {
   display: flex;
   align-items: center;
@@ -578,7 +590,7 @@ footer a { color: var(--lime); text-decoration: none; }
 <!-- RESERVÁ TU TURNO -->
 <section id="turno" class="reveal">
   <h2>Reservá tu turno</h2>
-  <p>Contactanos por WhatsApp y coordinamos tu primera consulta. Te esperamos en Palermo, CABA.</p>
+  <p>Escribinos por WhatsApp para coordinar tu primera consulta o para más información.<br>Permitinos ayudarte y acompañarte a cumplir tus objetivos sin sufrir el proceso!</p>
   <a class="btn-wa" href="https://wa.me/5491185246690?text=Hola%2C+quiero+reservar+una+consulta+en+Lado+B+Nutrici%C3%B3n" target="_blank">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
     Escribinos por WhatsApp
@@ -597,7 +609,7 @@ footer a { color: var(--lime); text-decoration: none; }
       <h3>Planteamos tu objetivo personalizado</h3>
       <p>A partir de los resultados definimos un <strong>objetivo realista</strong> y alcanzable según tus necesidades y estilo de vida, ya sea <strong>bajar grasa, aumentar masa muscular, mejorar el rendimiento o cuidar tu salud.</strong></p>
     </div>
-    <div class="card active reveal">
+    <div class="card reveal">
       <h3>Armamos un plan nutricional a tu medida</h3>
       <p>Diseñamos un plan nutricional 100% personalizado, <strong>adaptado a tu objetivo, gustos, rutina y contexto</strong>. No se trata de dietas genéricas, sino de una <strong>estrategia práctica y sostenible en el tiempo</strong>.</p>
     </div>
@@ -607,13 +619,12 @@ footer a { color: var(--lime); text-decoration: none; }
 <!-- INBODY -->
 <section id="inbody">
   <h2 class="section-title reveal">INBODY</h2>
+  <p class="reveal" style="text-align:center; max-width:600px; margin: -2rem auto 2.5rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé paso a paso cómo funciona nuestro sistema InBody</p>
   <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
-    <!-- Reemplazá src con tu thumbnail subida a GitHub -->
     <img class="video-thumb" src="images/inbody-video-thumb.jpg" alt="Video InBody">
     <div class="play-btn">
       <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
     </div>
-    <!-- Reemplazá VIDEO_ID con el ID de tu video de YouTube -->
     <iframe class="video-embed" id="videoEmbed" allow="autoplay" allowfullscreen></iframe>
   </div>
 </section>
@@ -625,31 +636,91 @@ footer a { color: var(--lime); text-decoration: none; }
     <div class="testimonial active">
       <div class="quote-mark">"</div>
       <div class="testimonial-title">"Mega recomendado"</div>
-      <p class="testimonial-text">Todo súper profesional y la mejor calidad. Nutricionistas dedicadas y específicas a las necesidades de cada paciente. Mega recomendado!</p>
+      <p class="testimonial-text">Todo súper profesional y la mejor calidad. Nutricionistas dedicadas y específicas a la necesidades de cada paciente. Mega recomendado!</p>
       <div class="stars">★★★★★</div>
       <div class="testimonial-author">
-        <img src="images/testimonio-1.jpg" alt="Tatiana Paladini">
+        <div class="author-avatar"></div>
         <span class="author-name">Tatiana Paladini</span>
       </div>
     </div>
     <div class="testimonial">
       <div class="quote-mark">"</div>
-      <div class="testimonial-title">"Un antes y un después"</div>
-      <p class="testimonial-text">Encontré el acompañamiento que necesitaba. Por primera vez en años no siento que estoy a dieta, sino que estoy aprendiendo a comer de verdad.</p>
+      <div class="testimonial-title">"100% recomendable"</div>
+      <p class="testimonial-text">100% recomendable. Grandes profesionales y muy atentas en todo. Cambié mi alimentación rotundamente y no solo mejoré mucho físicamente, me siento mejor y con mucha más energía.</p>
       <div class="stars">★★★★★</div>
       <div class="testimonial-author">
-        <img src="images/testimonio-2.jpg" alt="Paciente">
-        <span class="author-name">Cliente de Google</span>
+        <div class="author-avatar"></div>
+        <span class="author-name">Agustín Maurette</span>
       </div>
     </div>
     <div class="testimonial">
       <div class="quote-mark">"</div>
-      <div class="testimonial-title">"Resultados reales"</div>
-      <p class="testimonial-text">La evaluación con InBody me pareció increíble. Por fin tengo datos concretos de cómo está mi cuerpo y un plan que tiene sentido para mí.</p>
+      <div class="testimonial-title">"Muy profesionales"</div>
+      <p class="testimonial-text">Mega recomiendo a las chicas de Lado B nutrición. Me sentí muy cómoda en la consulta, como no me ha pasado con otros profesionales. Muy profesionales y disponibles. Gracias!!</p>
       <div class="stars">★★★★★</div>
       <div class="testimonial-author">
-        <img src="images/testimonio-3.jpg" alt="Paciente">
-        <span class="author-name">Cliente de Google</span>
+        <div class="author-avatar"></div>
+        <span class="author-name">María Clara Bori</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Súper recomendado"</div>
+      <p class="testimonial-text">Súper recomendado Lado B, ¡Fran y Carla son unas genias! Voy hace más de tres años y siempre me guían para tener una dieta saludable y acorde con mis objetivos de cada momento acompañándome y saldando todas mis dudas. 🤗</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <span class="author-name">Malena Adandía</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Muy profesionales"</div>
+      <p class="testimonial-text">Muy profesionales, te hacen sentir cómodo con todas tus dudas, te dan opciones de marcas saludables para los antojos, la tecnología con la que manejan tu plan de tratamiento hace que sea completamente confiable tus resultados a fin de mes!</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <span class="author-name">Esteban Aguilar</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Súper profesionales"</div>
+      <p class="testimonial-text">Las nutris son súper profesionales! Trabajan con el método In-Body que permite hacer un seguimiento exhaustivo de la masa muscular y la grasa. Además tienen un acompañamiento cálido y humano. Súper recomiendo este lugar y a las nutris 🤗</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <span class="author-name">Evangelina Rosa</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Excelentes profesionales"</div>
+      <p class="testimonial-text">Excelentes profesionales!! Fran me acompaña ya hace un tiempo, escuchando y aconsejando cómo llegar a mi objetivo teniendo en cuenta mis expectativas, realidad y posibilidades. Super recomendable!</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <span class="author-name">Nicolás Benini</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Ganar en salud"</div>
+      <p class="testimonial-text">Son unas genias! Son todo lo que está bien y más. Lugar súper cálido, ellas amorosas, se toman el tiempo necesario para explicar y aclarar dudas. Me ayudaron a GANAR EN SALUD. Ya son parte de mi equipo de salud, así lo siento. Súper recomendables.</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <span class="author-name">Miguel Ángel Gutierrez</span>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="quote-mark">"</div>
+      <div class="testimonial-title">"Mega recomendable"</div>
+      <p class="testimonial-text">Gran lugar, grandes profesionales y divinas las nutris. Me ayudaron a bajar de peso y aprender a comer sobre todo. Gracias Carla y Francisca. Mega recomendable.</p>
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-author">
+        <div class="author-avatar"></div>
+        <span class="author-name">Rodrigo Vildoza</span>
       </div>
     </div>
     <div class="slider-nav">
@@ -665,8 +736,8 @@ footer a { color: var(--lime); text-decoration: none; }
   <h2 class="section-title reveal">Encontranos</h2>
   <div class="map-wrapper reveal">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.5!2d-58.4317!3d-34.5876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzE1LjQiUyA1OMKwMjUnNTQuMSJX!5e0!3m2!1ses!2sar!4v1234567890"
-      allowfullscreen loading="lazy">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.510799836006!2d-58.41531442445894!3d-34.59124287295883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca86b2b95555%3A0x29b5a1bc3aeeceb!2sCharcas%203331%2C%20C1425BMQ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1774017013957!5m2!1ses!2sar"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
   <p class="map-address reveal"><strong>Charcas 3331</strong>, Palermo, Ciudad Autónoma de Buenos Aires</p>
@@ -674,7 +745,7 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Lado B Nutrición · Palermo, CABA · <a href="https://wa.me/5491185246690" target="_blank">WhatsApp</a></p>
+  <p>Lado B Nutrición © 2026</p>
 </footer>
 
 <!-- WA FLOAT -->
