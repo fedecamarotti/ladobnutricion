@@ -234,20 +234,20 @@ section { padding: 6rem 5%; }
 #turno {
   background: var(--dark);
   text-align: center;
-  padding: 6rem 5%;
+  padding: 4rem 5%;
 }
 
 #turno h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 #turno p {
   color: #aaa;
   font-size: 1.05rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.2rem;
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
@@ -352,7 +352,7 @@ section { padding: 6rem 5%; }
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 74px; height: 74px;
-  background: rgba(180,180,180,.45);
+  background: rgba(255,255,255,.85);
   backdrop-filter: blur(4px);
   border-radius: 50%;
   display: flex;
@@ -369,7 +369,7 @@ section { padding: 6rem 5%; }
 
 .video-wrapper:hover .play-btn {
   transform: translate(-50%, -50%) scale(1.1);
-  background: rgba(180,180,180,.65);
+  background: white;
   animation: none;
 }
 
@@ -399,20 +399,13 @@ section { padding: 6rem 5%; }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.quote-mark {
-  font-family: 'Playfair Display', serif;
-  font-size: 5rem;
-  color: var(--terracotta);
-  line-height: .5;
-  margin-bottom: 1.5rem;
-  opacity: .4;
-}
+.quote-mark { display: none; }
 
 .testimonial-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   color: var(--terracotta);
-  margin-bottom: 1rem;
+  margin-bottom: .6rem;
   font-style: italic;
 }
 
@@ -420,7 +413,7 @@ section { padding: 6rem 5%; }
   font-size: .95rem;
   line-height: 1.8;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .stars { color: #f5a623; font-size: 1.2rem; margin-bottom: 1.5rem; }
@@ -604,7 +597,7 @@ footer a { color: var(--lime); text-decoration: none; }
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
     Escribinos por WhatsApp
   </a>
-  <p style="white-space:nowrap; margin-top:1.5rem;">¡Permitinos ayudarte y acompañarte a cumplir tus objetivos sin sufrir el proceso!</p>
+  <p style="white-space:nowrap; margin-top:1.2rem;">¡Permitinos ayudarte y acompañarte a cumplir tus objetivos sin sufrir el proceso!</p>
 </section>
 
 <!-- CÓMO TRABAJAMOS -->
@@ -629,7 +622,7 @@ footer a { color: var(--lime); text-decoration: none; }
 <!-- INBODY -->
 <section id="inbody">
   <h2 class="section-title reveal">INBODY</h2>
-  <p class="reveal" style="text-align:center; max-width:600px; margin: -.5rem auto 2rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé paso a paso cómo funciona nuestro sistema InBody</p>
+  <p class="reveal" style="text-align:center; max-width:600px; margin: .2rem auto 2rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé paso a paso cómo funciona nuestro sistema InBody</p>
   <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
     <img class="video-thumb" src="images/previainbody.png" alt="Video InBody">
     <div class="play-btn">
