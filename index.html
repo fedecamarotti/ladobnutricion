@@ -15,12 +15,15 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-375545816');
 gtag('config', 'G-CQ0ME5ZH41');
-gtag('event', 'conversion', {'send_to': 'AW-375545816/FE2sCPiCro0CENi_ibMB'});
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') { window.location = url; }
-  };
-  gtag('event', 'conversion', {'send_to': 'AW-375545816/3GrmCJj71IYcENi_ibMB', 'event_callback': callback});
+  gtag('event', 'conversion', {
+    'send_to': 'AW-375545816/3GrmCJj71IYcENi_ibMB',
+    'event_callback': function() {
+      if (typeof(url) != 'undefined') {
+        window.open(url, '_blank');
+      }
+    }
+  });
   return false;
 }
 </script>
