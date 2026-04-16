@@ -39,7 +39,7 @@ function gtag_report_conversion(url) {
   --blush: #f5ede8;
   --terracotta: #c96a4a;
   --terracotta-light: #e8906f;
-  --dark: #1a1a1a;
+  --dark: #2b2b2b;
   --text: #3a3a3a;
   --lime: #c8e63c;
   --white: #ffffff;
@@ -61,21 +61,18 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: transparent;
+  background: var(--dark);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
   height: 70px;
-  transition: background .4s, box-shadow .3s;
+  transition: box-shadow .3s, transform .3s;
 }
 
-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
-nav.nav-dark { background: rgba(26,26,26,.15); }
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.2); }
 
-.nav-logo img {
-  height: 48px;
-}
+.nav-logo img { height: 48px; }
 
 .nav-links {
   display: flex;
@@ -84,36 +81,27 @@ nav.nav-dark { background: rgba(26,26,26,.15); }
   list-style: none;
 }
 
-.nav-links li {
-  display: flex;
-  align-items: center;
-}
+.nav-links li { display: flex; align-items: center; }
 
 .nav-links li + li::before {
   content: '';
   width: 1px;
   height: 14px;
-  background: rgba(0,0,0,.2);
+  background: rgba(255,255,255,.15);
   margin: 0 .75rem;
-  transition: background .4s;
 }
 
-nav.nav-dark .nav-links li + li::before { background: rgba(255,255,255,.2); }
-
 .nav-links a {
-  color: var(--dark);
+  color: #ccc;
   text-decoration: none;
   font-size: .75rem;
   font-weight: 400;
   letter-spacing: .04em;
   text-transform: uppercase;
-  transition: color .2s, font-weight .1s;
+  transition: color .2s;
 }
 
-nav.nav-dark .nav-links a { color: #ddd; }
-
-.nav-links a:hover { color: var(--lime); font-weight: 700; }
-nav.nav-dark .nav-links a:hover { color: var(--lime); }
+.nav-links a:hover { color: var(--terracotta-light); }
 
 .nav-cta {
   background: rgba(37,211,102,.75) !important;
@@ -124,9 +112,36 @@ nav.nav-dark .nav-links a:hover { color: var(--lime); }
   backdrop-filter: blur(4px);
 }
 
-.nav-cta:hover { background: rgba(37,211,102,.9) !important; color: white !important; font-weight: 700 !important; }
+.nav-cta:hover { background: rgba(37,211,102,.9) !important; color: white !important; }
 
-/* HAMBURGER */
+/* MOBILE FLOATING MENU BTN */
+.mobile-menu-float {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  left: 1.75rem;
+  z-index: 300;
+  background: var(--terracotta);
+  color: white;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .6rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(201,106,74,.4);
+  transition: opacity .3s, transform .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-menu-float.visible {
+  opacity: 1;
+  pointer-events: all;
+}
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { width: 24px; height: 2px; background: white; transition: .3s; }
 
@@ -700,6 +715,9 @@ footer a { color: var(--lime); text-decoration: none; }
   .nav-links a { font-size: .9rem; }
   .nav-cta { background: #25d366 !important; display: inline-block; width: fit-content; }
 
+  nav { transition: transform .3s, box-shadow .3s; }
+  nav.nav-hidden { transform: translateY(-100%); }
+  .mobile-menu-float { display: block; }
   .hamburger { display: flex; }
 
   /* Reemplazar hamburger por botón "Menú" naranja */
@@ -945,34 +963,32 @@ footer a { color: var(--lime); text-decoration: none; }
   <p>Lado B Nutrición © 2016 - 2026</p>
 </footer>
 
+<!-- MOBILE FLOAT MENU BTN -->
+<button class="mobile-menu-float" id="mobileMenuFloat" onclick="toggleMenu()">Menú</button>
+
 <!-- WA FLOAT -->
 <a class="wa-float" href="https://wa.me/5491159113151?text=Hola%21+Me+gustar%C3%ADa+tener+una+consulta%21" target="_blank" onclick="gtag_report_conversion(this.href); return false;" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
 </a>
 
 <script>
-// NAV scroll + dark/light detection
-const darkSections = ['turno', 'stats', 'donde'];
+// NAV scroll + mobile hide
 const navbar = document.getElementById('navbar');
+const mobileFloat = document.getElementById('mobileMenuFloat');
 
-function updateNav() {
-  const scrollY = window.scrollY;
-  navbar.classList.toggle('scrolled', scrollY > 20);
-
-  // Detectar sección actual
-  const sections = document.querySelectorAll('section[id], nav + section');
-  let currentDark = false;
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= 50 && rect.bottom > 50) {
-      currentDark = darkSections.includes(section.id);
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  navbar.classList.toggle('scrolled', current > 20);
+  if (window.innerWidth <= 768) {
+    if (current > 80) {
+      navbar.classList.add('nav-hidden');
+      mobileFloat.classList.add('visible');
+    } else {
+      navbar.classList.remove('nav-hidden');
+      mobileFloat.classList.remove('visible');
     }
-  });
-  navbar.classList.toggle('nav-dark', currentDark);
-}
-
-window.addEventListener('scroll', updateNav);
-updateNav();
+  }
+});
 
 // Mobile menu
 function toggleMenu() {
