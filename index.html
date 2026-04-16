@@ -28,6 +28,12 @@ function gtag_report_conversion(url) {
 }
 </script>
 <style>
+@font-face {
+  font-family: 'LemonMilk';
+  src: url('fonts/LEMONMILK-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 :root {
   --cream: #faf7f4;
   --blush: #f5ede8;
@@ -166,14 +172,16 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
 }
 
 /* SECTIONS */
-section { padding: 6rem 5%; }
+section { padding: 4rem 5%; }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'LemonMilk', 'DM Sans', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
   font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
   color: var(--dark);
 }
 
@@ -191,12 +199,14 @@ section { padding: 6rem 5%; }
 
 /* QUIÉNES SOMOS */
 #quienes {
-  background: var(--white);
+  background-color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='71' cy='43' r='1.2' fill='%23c8c8c8' opacity='0.65'/%3E%3Ccircle cx='203' cy='67' r='1.5' fill='%23d0d0d0' opacity='0.55'/%3E%3Ccircle cx='338' cy='19' r='1' fill='%23c4c4c4' opacity='0.6'/%3E%3Ccircle cx='29' cy='131' r='1.4' fill='%23cccccc' opacity='0.5'/%3E%3Ccircle cx='157' cy='158' r='1.1' fill='%23c8c8c8' opacity='0.65'/%3E%3Ccircle cx='289' cy='143' r='1.6' fill='%23d2d2d2' opacity='0.5'/%3E%3Ccircle cx='383' cy='167' r='1.3' fill='%23c6c6c6' opacity='0.6'/%3E%3Ccircle cx='112' cy='223' r='1' fill='%23cacaca' opacity='0.55'/%3E%3Ccircle cx='247' cy='209' r='1.5' fill='%23c8c8c8' opacity='0.6'/%3E%3Ccircle cx='361' cy='251' r='1.2' fill='%23d0d0d0' opacity='0.5'/%3E%3Ccircle cx='54' cy='278' r='1.4' fill='%23c4c4c4' opacity='0.65'/%3E%3Ccircle cx='178' cy='302' r='1.1' fill='%23cccccc' opacity='0.55'/%3E%3Ccircle cx='319' cy='319' r='1.3' fill='%23c8c8c8' opacity='0.6'/%3E%3Ccircle cx='23' cy='361' r='1' fill='%23d2d2d2' opacity='0.5'/%3E%3Ccircle cx='143' cy='377' r='1.6' fill='%23c6c6c6' opacity='0.6'/%3E%3Ccircle cx='271' cy='389' r='1.2' fill='%23cacaca' opacity='0.55'/%3E%3Ccircle cx='391' cy='347' r='1.4' fill='%23c8c8c8' opacity='0.65'/%3E%3Ccircle cx='89' cy='97' r='1.1' fill='%23d0d0d0' opacity='0.5'/%3E%3Ccircle cx='224' cy='83' r='1.3' fill='%23c4c4c4' opacity='0.6'/%3E%3Ccircle cx='347' cy='113' r='1' fill='%23cccccc' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding: 7rem 8%;
+  padding: 5rem 8%;
 }
 
 .quienes-text h2 {
@@ -298,7 +308,9 @@ section { padding: 6rem 5%; }
 
 /* CÓMO TRABAJAMOS */
 #como {
-  background: var(--blush);
+  background-color: var(--blush);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='53' cy='71' r='1.4' fill='%23c96a4a' opacity='0.12'/%3E%3Ccircle cx='189' cy='18' r='1.1' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='312' cy='89' r='1.6' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='97' cy='163' r='1' fill='%23c96a4a' opacity='0.13'/%3E%3Ccircle cx='241' cy='147' r='1.3' fill='%23c96a4a' opacity='0.08'/%3E%3Ccircle cx='378' cy='134' r='1.2' fill='%23c96a4a' opacity='0.11'/%3E%3Ccircle cx='29' cy='234' r='1.5' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='163' cy='218' r='1.1' fill='%23c96a4a' opacity='0.12'/%3E%3Ccircle cx='347' cy='267' r='1.3' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='78' cy='301' r='1' fill='%23c96a4a' opacity='0.13'/%3E%3Ccircle cx='215' cy='289' r='1.6' fill='%23c96a4a' opacity='0.08'/%3E%3Ccircle cx='389' cy='312' r='1.2' fill='%23c96a4a' opacity='0.11'/%3E%3Ccircle cx='134' cy='367' r='1.4' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='278' cy='351' r='1.1' fill='%23c96a4a' opacity='0.12'/%3E%3Ccircle cx='41' cy='389' r='1.3' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='321' cy='383' r='1' fill='%23c96a4a' opacity='0.13'/%3E%3Ccircle cx='267' cy='47' r='1.5' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='141' cy='93' r='1.2' fill='%23c96a4a' opacity='0.11'/%3E%3Ccircle cx='356' cy='198' r='1.1' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='189' cy='334' r='1.4' fill='%23c96a4a' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
   text-align: center;
 }
 
@@ -344,7 +356,9 @@ section { padding: 6rem 5%; }
 
 /* INBODY */
 #inbody {
-  background: var(--white);
+  background-color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='37' cy='83' r='1.3' fill='%23cacaca' opacity='0.7'/%3E%3Ccircle cx='112' cy='21' r='1' fill='%23c8c8c8' opacity='0.6'/%3E%3Ccircle cx='289' cy='57' r='1.5' fill='%23d0d0d0' opacity='0.5'/%3E%3Ccircle cx='178' cy='134' r='1.1' fill='%23c4c4c4' opacity='0.65'/%3E%3Ccircle cx='341' cy='110' r='1.3' fill='%23cccccc' opacity='0.6'/%3E%3Ccircle cx='63' cy='197' r='1' fill='%23c8c8c8' opacity='0.55'/%3E%3Ccircle cx='220' cy='178' r='1.6' fill='%23d2d2d2' opacity='0.5'/%3E%3Ccircle cx='377' cy='203' r='1.2' fill='%23c6c6c6' opacity='0.65'/%3E%3Ccircle cx='145' cy='267' r='1' fill='%23cacaca' opacity='0.6'/%3E%3Ccircle cx='310' cy='249' r='1.4' fill='%23c8c8c8' opacity='0.55'/%3E%3Ccircle cx='19' cy='312' r='1.5' fill='%23d0d0d0' opacity='0.5'/%3E%3Ccircle cx='253' cy='321' r='1.1' fill='%23c4c4c4' opacity='0.6'/%3E%3Ccircle cx='88' cy='358' r='1.3' fill='%23cccccc' opacity='0.65'/%3E%3Ccircle cx='393' cy='341' r='1' fill='%23c8c8c8' opacity='0.55'/%3E%3Ccircle cx='167' cy='389' r='1.4' fill='%23d2d2d2' opacity='0.5'/%3E%3Ccircle cx='328' cy='377' r='1.2' fill='%23c6c6c6' opacity='0.6'/%3E%3Ccircle cx='201' cy='43' r='1' fill='%23cacaca' opacity='0.65'/%3E%3Ccircle cx='356' cy='29' r='1.5' fill='%23c8c8c8' opacity='0.55'/%3E%3Ccircle cx='134' cy='155' r='1.1' fill='%23d0d0d0' opacity='0.5'/%3E%3Ccircle cx='275' cy='143' r='1.3' fill='%23c4c4c4' opacity='0.6'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
   text-align: center;
 }
 
@@ -352,9 +366,13 @@ section { padding: 6rem 5%; }
   position: relative;
   max-width: 760px;
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 8px 40px rgba(201,106,74,.18), 0 2px 12px rgba(0,0,0,.10);
+  border: 1.5px solid rgba(201,106,74,.25);
+  outline: 6px solid rgba(201,106,74,.07);
+  outline-offset: 4px;
 }
 
 .video-thumb {
@@ -398,9 +416,58 @@ section { padding: 6rem 5%; }
 
 .video-embed { display: none; width: 100%; aspect-ratio: 16/9; border: none; }
 
+/* STATS */
+#stats {
+  background: var(--dark);
+  padding: 3.5rem 5%;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  padding: 0 2rem;
+  border-right: 1px solid #333;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-item svg {
+  width: 32px;
+  height: 32px;
+  color: var(--terracotta);
+  margin-bottom: .3rem;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: .8rem;
+  color: #aaa;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 /* TESTIMONIOS */
 #testimonios {
-  background: var(--blush);
+  background-color: var(--blush);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='17' cy='58' r='1.5' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='143' cy='29' r='1.1' fill='%23c96a4a' opacity='0.13'/%3E%3Ccircle cx='274' cy='71' r='1.4' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='381' cy='43' r='1.2' fill='%23c96a4a' opacity='0.11'/%3E%3Ccircle cx='62' cy='134' r='1' fill='%23c96a4a' opacity='0.12'/%3E%3Ccircle cx='198' cy='118' r='1.6' fill='%23c96a4a' opacity='0.08'/%3E%3Ccircle cx='329' cy='152' r='1.3' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='89' cy='213' r='1.4' fill='%23c96a4a' opacity='0.13'/%3E%3Ccircle cx='231' cy='187' r='1.1' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='367' cy='229' r='1.5' fill='%23c96a4a' opacity='0.11'/%3E%3Ccircle cx='34' cy='287' r='1.2' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='167' cy='261' r='1' fill='%23c96a4a' opacity='0.12'/%3E%3Ccircle cx='298' cy='301' r='1.4' fill='%23c96a4a' opacity='0.08'/%3E%3Ccircle cx='113' cy='347' r='1.6' fill='%23c96a4a' opacity='0.13'/%3E%3Ccircle cx='249' cy='371' r='1.1' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='389' cy='358' r='1.3' fill='%23c96a4a' opacity='0.11'/%3E%3Ccircle cx='54' cy='389' r='1' fill='%23c96a4a' opacity='0.1'/%3E%3Ccircle cx='312' cy='219' r='1.5' fill='%23c96a4a' opacity='0.12'/%3E%3Ccircle cx='178' cy='333' r='1.2' fill='%23c96a4a' opacity='0.09'/%3E%3Ccircle cx='341' cy='97' r='1.1' fill='%23c96a4a' opacity='0.11'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
   text-align: center;
 }
 
@@ -502,28 +569,59 @@ section { padding: 6rem 5%; }
   text-align: center;
 }
 
-.map-wrapper {
-  max-width: 780px;
-  margin: 0 auto;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 30px rgba(0,0,0,.1);
+.donde-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
 }
 
-.map-wrapper iframe {
+.donde-info {
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5%;
+}
+
+.donde-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 2.5rem;
+  letter-spacing: .05em;
+}
+
+.donde-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.donde-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color .2s;
+}
+
+.donde-link:hover { color: var(--white); }
+
+.donde-link svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.donde-map iframe {
   width: 100%;
-  height: 420px;
+  height: 100%;
+  min-height: 420px;
   border: none;
   display: block;
 }
-
-.map-address {
-  margin-top: 1.5rem;
-  font-size: .95rem;
-  color: #666;
-}
-
-.map-address strong { color: var(--dark); }
 
 /* FOOTER */
 footer {
@@ -592,10 +690,14 @@ footer a { color: var(--lime); text-decoration: none; }
   .hamburger span { display: none; }
   .hamburger::before { content: 'Menú'; }
 
-  #quienes { grid-template-columns: 1fr; padding: 4rem 6%; }
+  #quienes { grid-template-columns: 1fr; padding: 3rem 6%; }
   .cards { grid-template-columns: 1fr; }
-  section { padding: 4rem 6%; }
-
+  section { padding: 3rem 6%; }
+  .donde-grid { grid-template-columns: 1fr; }
+  .donde-map iframe { min-height: 300px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .stat-item { border-right: none; border-bottom: 1px solid #333; padding-bottom: 2rem; }
+  .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
   #turno p { white-space: normal !important; font-size: .95rem; }
 }
 </style>
@@ -629,30 +731,17 @@ footer a { color: var(--lime); text-decoration: none; }
   <div class="hero-scroll">conocenos</div>
 </section>
 
-<!-- QUIÉNES SOMOS -->
-<section id="quienes">
-  <div class="quienes-text reveal">
-    <h2>¿Quiénes somos?</h2>
-    <p>Somos un centro de nutrición ubicado en Palermo. Trabajamos con tecnología <strong>InBody</strong>, que nos permite evaluar tu composición corporal de forma detallada y así poder hacer un seguimiento real y preciso de tus avances.</p>
-    <p>No creemos en dietas restrictivas ni en soluciones rápidas o temporales. Nuestro enfoque se basa en la <strong>alimentación consciente</strong>, ayudándote a construir hábitos saludables y sostenibles en el tiempo, sin pasar hambre y sin "sufrir" el proceso.</p>
-    <p>Nos especializamos en <strong>sobrepeso leve y obesidad</strong>, <strong>nutrición deportiva</strong>, <strong>alimentación vegana y vegetariana</strong>, entre otras áreas. Nuestro objetivo es acompañarte de manera integral para que logres cambios reales, duraderos y que se adapten a vos.</p>
+<!-- CONOCENOS (ex INBODY) -->
+<section id="inbody">
+  <h2 class="section-title reveal">CONOCENOS</h2>
+  <p class="reveal" style="text-align:center; max-width:640px; margin: -2.5rem auto 2rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé tu verdadera composición corporal con nuestro sistema <strong>InBody</strong> y armá un plan a tu medida.</p>
+  <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
+    <img class="video-thumb" src="images/previainbody.png" alt="Video InBody">
+    <div class="play-btn">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+    <iframe class="video-embed" id="videoEmbed" allow="autoplay" allowfullscreen></iframe>
   </div>
-  <div class="quienes-img reveal">
-    <div class="dots-decoration"></div>
-    <img class="img-main" src="images/inbody.png" alt="Tecnología InBody">
-    <img class="img-overlay" src="images/resultados.png" alt="Resultados InBody">
-  </div>
-</section>
-
-<!-- RESERVÁ TU TURNO -->
-<section id="turno" class="reveal">
-  <h2>Reservá tu turno</h2>
-  <p style="white-space:nowrap;">Escribinos por WhatsApp para coordinar tu primera consulta o para más información.</p>
-  <a class="btn-wa" href="https://wa.me/5491159113151?text=Hola%21+Me+gustar%C3%ADa+tener+una+consulta%21" target="_blank" onclick="gtag_report_conversion(this.href); return false;">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
-    Escribinos por WhatsApp
-  </a>
-  <p style="white-space:nowrap; margin-top:1.2rem;">¡Permitinos ayudarte y acompañarte a cumplir tus objetivos sin sufrir el proceso!</p>
 </section>
 
 <!-- CÓMO TRABAJAMOS -->
@@ -674,112 +763,111 @@ footer a { color: var(--lime); text-decoration: none; }
   </div>
 </section>
 
-<!-- INBODY -->
-<section id="inbody">
-  <h2 class="section-title reveal">INBODY</h2>
-  <p class="reveal" style="text-align:center; max-width:600px; margin: -2.5rem auto 1.5rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé paso a paso cómo funciona nuestro sistema InBody</p>
-  <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
-    <img class="video-thumb" src="images/previainbody.png" alt="Video InBody">
-    <div class="play-btn">
-      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+<!-- RESERVÁ TU TURNO -->
+<section id="turno" class="reveal">
+  <h2>Reservá tu turno</h2>
+  <p style="white-space:nowrap;">Escribinos por WhatsApp para coordinar tu primera consulta o para más información.</p>
+  <a class="btn-wa" href="https://wa.me/5491159113151?text=Hola%21+Me+gustar%C3%ADa+tener+una+consulta%21" target="_blank" onclick="gtag_report_conversion(this.href); return false;">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
+    Escribinos por WhatsApp
+  </a>
+  <p style="white-space:nowrap; margin-top:1.2rem;">¡Permitinos ayudarte y acompañarte a cumplir tus objetivos sin sufrir el proceso!</p>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes">
+  <div class="quienes-text reveal">
+    <h2>LADO B NUTRICIÓN</h2>
+    <p>Somos un centro de nutrición ubicado en Palermo. Trabajamos con tecnología <strong>InBody</strong>, que nos permite evaluar tu composición corporal de forma detallada y así poder hacer un seguimiento real y preciso de tus avances.</p>
+    <p>No creemos en dietas restrictivas ni en soluciones rápidas o temporales. Nuestro enfoque se basa en la <strong>alimentación consciente</strong>, ayudándote a construir hábitos saludables y sostenibles en el tiempo, sin pasar hambre y sin "sufrir" el proceso.</p>
+    <p>Nos especializamos en <strong>sobrepeso leve y obesidad</strong>, <strong>nutrición deportiva</strong>, <strong>alimentación vegana y vegetariana</strong>, entre otras áreas. Nuestro objetivo es acompañarte de manera integral para que logres cambios reales, duraderos y que se adapten a vos.</p>
+  </div>
+  <div class="quienes-img reveal">
+    <div class="dots-decoration"></div>
+    <img class="img-main" src="images/inbody.png" alt="Tecnología InBody">
+    <img class="img-overlay" src="images/resultados.png" alt="Resultados InBody">
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span class="stat-number"><strong>+</strong> de 8 años</span>
+      <span class="stat-label">atendiendo</span>
     </div>
-    <iframe class="video-embed" id="videoEmbed" allow="autoplay" allowfullscreen></iframe>
+    <div class="stat-item reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="stat-number"><strong>+</strong> de 3.000</span>
+      <span class="stat-label">pacientes atendidos</span>
+    </div>
+    <div class="stat-item reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <span class="stat-number">100%</span>
+      <span class="stat-label">planes personalizados</span>
+    </div>
   </div>
 </section>
 
 <!-- TESTIMONIOS -->
 <section id="testimonios">
   <h2 class="section-title reveal">Testimonios de quienes nos eligen</h2>
+  <p class="reveal" style="text-align:center; font-size:.8rem; letter-spacing:.08em; color:#b08070; margin-top:-2.8rem; margin-bottom:2.5rem; text-transform:uppercase;">— Reseñas Google Maps —</p>
   <div class="testimonial-slider reveal">
     <div class="testimonial active">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Mega recomendado"</div>
       <p class="testimonial-text">Todo súper profesional y la mejor calidad. Nutricionistas dedicadas y específicas a la necesidades de cada paciente. Mega recomendado!</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Tatiana Paladini</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Tatiana Paladini</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"100% recomendable"</div>
       <p class="testimonial-text">100% recomendable. Grandes profesionales y muy atentas en todo. Cambié mi alimentación rotundamente y no solo mejoré mucho físicamente, me siento mejor y con mucha más energía.</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Agustín Maurette</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Agustín Maurette</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Muy profesionales"</div>
       <p class="testimonial-text">Mega recomiendo a las chicas de Lado B nutrición. Me sentí muy cómoda en la consulta, como no me ha pasado con otros profesionales. Muy profesionales y disponibles. Gracias!!</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">María Clara Bori</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">María Clara Bori</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Súper recomendado"</div>
       <p class="testimonial-text">Súper recomendado Lado B, ¡Fran y Carla son unas genias! Voy hace más de tres años y siempre me guían para tener una dieta saludable y acorde con mis objetivos de cada momento acompañándome y saldando todas mis dudas. 🤗</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Malena Adandía</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Malena Adandía</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Muy profesionales"</div>
       <p class="testimonial-text">Muy profesionales, te hacen sentir cómodo con todas tus dudas, te dan opciones de marcas saludables para los antojos, la tecnología con la que manejan tu plan de tratamiento hace que sea completamente confiable tus resultados a fin de mes!</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Esteban Aguilar</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Esteban Aguilar</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Súper profesionales"</div>
       <p class="testimonial-text">Las nutris son súper profesionales! Trabajan con el método In-Body que permite hacer un seguimiento exhaustivo de la masa muscular y la grasa. Además tienen un acompañamiento cálido y humano. Súper recomiendo este lugar y a las nutris 🤗</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Evangelina Rosa</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Evangelina Rosa</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Excelentes profesionales"</div>
       <p class="testimonial-text">Excelentes profesionales!! Fran me acompaña ya hace un tiempo, escuchando y aconsejando cómo llegar a mi objetivo teniendo en cuenta mis expectativas, realidad y posibilidades. Super recomendable!</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Nicolás Benini</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Nicolás Benini</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Ganar en salud"</div>
       <p class="testimonial-text">Son unas genias! Son todo lo que está bien y más. Lugar súper cálido, ellas amorosas, se toman el tiempo necesario para explicar y aclarar dudas. Me ayudaron a GANAR EN SALUD. Ya son parte de mi equipo de salud, así lo siento. Súper recomendables.</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Miguel Ángel Gutierrez</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Miguel Ángel Gutierrez</span></div>
     </div>
     <div class="testimonial">
-      <div class="quote-mark">"</div>
       <div class="testimonial-title">"Mega recomendable"</div>
       <p class="testimonial-text">Gran lugar, grandes profesionales y divinas las nutris. Me ayudaron a bajar de peso y aprender a comer sobre todo. Gracias Carla y Francisca. Mega recomendable.</p>
       <div class="stars">★★★★★</div>
-      <div class="testimonial-author">
-        <div class="author-avatar"></div>
-        <span class="author-name">Rodrigo Vildoza</span>
-      </div>
+      <div class="testimonial-author"><span class="author-name">Rodrigo Vildoza</span></div>
     </div>
     <div class="slider-nav">
       <button class="slider-btn" onclick="changeSlide(-1)">←</button>
@@ -790,15 +878,32 @@ footer a { color: var(--lime); text-decoration: none; }
 </section>
 
 <!-- DÓNDE ESTAMOS -->
-<section id="donde">
-  <h2 class="section-title reveal">Encontranos</h2>
-  <div class="map-wrapper reveal">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.510799836006!2d-58.41531442445894!3d-34.59124287295883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca86b2b95555%3A0x29b5a1bc3aeeceb!2sCharcas%203331%2C%20C1425BMQ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1774017013957!5m2!1ses!2sar"
-      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+<section id="donde" style="padding:0;">
+  <div class="donde-grid">
+    <div class="donde-info reveal">
+      <h2>ENCONTRANOS</h2>
+      <div class="donde-links">
+        <a class="donde-link" href="https://maps.google.com/?q=Charcas+3331+Palermo+Buenos+Aires" target="_blank">
+          <svg viewBox="0 0 24 24" fill="#EA4335"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Charcas 3331, Palermo</span>
+        </a>
+        <a class="donde-link" href="https://wa.me/5491159113151?text=Hola%21+Me+gustar%C3%ADa+tener+una+consulta%21" target="_blank" onclick="gtag_report_conversion(this.href); return false;">
+          <svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.554 4.122 1.528 5.855L.057 23.882l6.233-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.7.971.987-3.608-.234-.371A9.818 9.818 0 1112 21.818z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a class="donde-link" href="https://www.instagram.com/ladobnutricion" target="_blank">
+          <svg viewBox="0 0 24 24"><defs><radialGradient id="igGrad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><path fill="url(#igGrad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+    <div class="donde-map reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.510799836006!2d-58.41531442445894!3d-34.59124287295883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca86b2b95555%3A0x29b5a1bc3aeeceb!2sCharcas%203331%2C%20C1425BMQ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1774017013957!5m2!1ses!2sar"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </div>
-  <p class="map-address reveal"><strong>Charcas 3331</strong>, Palermo, Ciudad Autónoma de Buenos Aires</p>
 </section>
 
 <!-- FOOTER -->
