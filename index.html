@@ -61,16 +61,17 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: var(--dark);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
   height: 70px;
-  transition: box-shadow .3s;
+  transition: background .4s, box-shadow .3s;
 }
 
-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.1); }
+nav.nav-dark { background: rgba(26,26,26,.15); }
 
 .nav-logo img {
   height: 48px;
@@ -92,12 +93,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
   content: '';
   width: 1px;
   height: 14px;
-  background: #444;
+  background: rgba(0,0,0,.2);
   margin: 0 .75rem;
+  transition: background .4s;
 }
 
+nav.nav-dark .nav-links li + li::before { background: rgba(255,255,255,.2); }
+
 .nav-links a {
-  color: #ccc;
+  color: var(--dark);
   text-decoration: none;
   font-size: .75rem;
   font-weight: 400;
@@ -106,17 +110,21 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
   transition: color .2s, font-weight .1s;
 }
 
+nav.nav-dark .nav-links a { color: #ddd; }
+
 .nav-links a:hover { color: var(--lime); font-weight: 700; }
+nav.nav-dark .nav-links a:hover { color: var(--lime); }
 
 .nav-cta {
-  background: #25d366 !important;
+  background: rgba(37,211,102,.75) !important;
   color: white !important;
   padding: .45rem 1.2rem;
   border-radius: 20px;
   font-weight: 500 !important;
+  backdrop-filter: blur(4px);
 }
 
-.nav-cta:hover { background: #1db954 !important; color: white !important; font-weight: 700 !important; }
+.nav-cta:hover { background: rgba(37,211,102,.9) !important; color: white !important; font-weight: 700 !important; }
 
 /* HAMBURGER */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
@@ -711,11 +719,11 @@ footer a { color: var(--lime); text-decoration: none; }
     <!-- Reemplazá src con la URL de tu logo en GitHub -->
     <img src="images/logoLB.png" alt="Lado B Nutrición">
   </a>  <ul class="nav-links" id="navLinks">
-    <li><a href="#quienes">Quiénes somos</a></li>
-    <li><a href="#como">Cómo trabajamos</a></li>
     <li><a href="#inbody">InBody</a></li>
+    <li><a href="#como">Cómo trabajamos</a></li>
+    <li><a href="#quienes">Nosotros</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
-    <li><a href="#donde">Dónde estamos</a></li>
+    <li><a href="#donde">Encontranos</a></li>
     <li><a href="https://wa.me/5491159113151?text=Hola%21+Me+gustar%C3%ADa+tener+una+consulta%21" target="_blank" onclick="gtag_report_conversion(this.href); return false;" class="nav-cta">Reservá tu turno</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -918,10 +926,28 @@ footer a { color: var(--lime); text-decoration: none; }
 </a>
 
 <script>
-// NAV scroll
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-});
+// NAV scroll + dark/light detection
+const darkSections = ['turno', 'stats', 'donde'];
+const navbar = document.getElementById('navbar');
+
+function updateNav() {
+  const scrollY = window.scrollY;
+  navbar.classList.toggle('scrolled', scrollY > 20);
+
+  // Detectar sección actual
+  const sections = document.querySelectorAll('section[id], nav + section');
+  let currentDark = false;
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 50 && rect.bottom > 50) {
+      currentDark = darkSections.includes(section.id);
+    }
+  });
+  navbar.classList.toggle('nav-dark', currentDark);
+}
+
+window.addEventListener('scroll', updateNav);
+updateNav();
 
 // Mobile menu
 function toggleMenu() {
