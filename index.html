@@ -114,34 +114,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.2); }
 
 .nav-cta:hover { background: rgba(37,211,102,.9) !important; color: white !important; }
 
-/* MOBILE FLOATING MENU BTN */
-.mobile-menu-float {
-  display: none;
-  position: fixed;
-  bottom: 5rem;
-  left: 1.75rem;
-  z-index: 300;
-  background: var(--terracotta);
-  color: white;
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .75rem;
-  font-weight: 500;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  padding: .6rem 1.2rem;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(201,106,74,.4);
-  transition: opacity .3s, transform .3s;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.mobile-menu-float.visible {
-  opacity: 1;
-  pointer-events: all;
-}
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { width: 24px; height: 2px; background: white; transition: .3s; }
 
@@ -211,7 +183,9 @@ section[id] { scroll-margin-top: 70px; }
   color: var(--dark);
 }
 
-/* FADE IN ANIMATION */
+.quienes-extra { display: block; }
+.ver-mas-btn { display: none; }
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -750,8 +724,6 @@ footer a { color: var(--lime); text-decoration: none; }
   .nav-cta { background: #25d366 !important; display: inline-block; width: fit-content; }
 
   nav { transition: transform .3s, box-shadow .3s; }
-  nav.nav-hidden { transform: translateY(-100%); }
-  .mobile-menu-float { display: block; }
   .hamburger { display: flex; }
 
   /* Reemplazar hamburger por botón "Menú" naranja */
@@ -774,6 +746,21 @@ footer a { color: var(--lime); text-decoration: none; }
   .hamburger::before { content: 'Menú'; }
 
   #quienes { grid-template-columns: 1fr; padding: 3rem 6%; }
+  .quienes-extra { display: none; }
+  .quienes-extra.open { display: block; }
+  .ver-mas-btn {
+    display: inline-block;
+    margin-top: .75rem;
+    background: none;
+    border: none;
+    color: var(--terracotta);
+    font-family: 'DM Sans', sans-serif;
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    letter-spacing: .02em;
+  }
   .cards { grid-template-columns: 1fr; }
   section { padding: 3rem 6%; }
   .donde-grid { grid-template-columns: 1fr; }
@@ -865,8 +852,11 @@ footer a { color: var(--lime); text-decoration: none; }
   <div class="quienes-text reveal">
     <h2>LADO B NUTRICIÓN</h2>
     <p>Somos un centro de nutrición ubicado en Palermo. Trabajamos con tecnología <strong>InBody</strong>, que nos permite evaluar tu composición corporal de forma detallada y así poder hacer un seguimiento real y preciso de tus avances.</p>
-    <p>No creemos en dietas restrictivas ni en soluciones rápidas o temporales. Nuestro enfoque se basa en la <strong>alimentación consciente</strong>, ayudándote a construir hábitos saludables y sostenibles en el tiempo, sin pasar hambre y sin "sufrir" el proceso.</p>
-    <p>Nos especializamos en <strong>sobrepeso leve y obesidad</strong>, <strong>nutrición deportiva</strong>, <strong>alimentación vegana y vegetariana</strong>, entre otras áreas. Nuestro objetivo es acompañarte de manera integral para que logres cambios reales, duraderos y que se adapten a vos.</p>
+    <div class="quienes-extra" id="quienesExtra">
+      <p>No creemos en dietas restrictivas ni en soluciones rápidas o temporales. Nuestro enfoque se basa en la <strong>alimentación consciente</strong>, ayudándote a construir hábitos saludables y sostenibles en el tiempo, sin pasar hambre y sin "sufrir" el proceso.</p>
+      <p>Nos especializamos en <strong>sobrepeso leve y obesidad</strong>, <strong>nutrición deportiva</strong>, <strong>alimentación vegana y vegetariana</strong>, entre otras áreas. Nuestro objetivo es acompañarte de manera integral para que logres cambios reales, duraderos y que se adapten a vos.</p>
+    </div>
+    <button class="ver-mas-btn" id="verMasBtn" onclick="toggleVerMas()">Ver más ↓</button>
   </div>
   <div class="quienes-img reveal">
     <div class="dots-decoration"></div>
@@ -1004,7 +994,6 @@ footer a { color: var(--lime); text-decoration: none; }
 </footer>
 
 <!-- MOBILE FLOAT MENU BTN -->
-<button class="mobile-menu-float" id="mobileMenuFloat" onclick="toggleMenu()">Menú</button>
 
 <!-- WA FLOAT -->
 <a class="wa-float" href="https://wa.me/5491159113151?text=Hola%21+Me+gustar%C3%ADa+tener+una+consulta%21" target="_blank" onclick="gtag_report_conversion(this.href); return false;" aria-label="WhatsApp">
@@ -1012,23 +1001,20 @@ footer a { color: var(--lime); text-decoration: none; }
 </a>
 
 <script>
-// NAV scroll + mobile hide
+// NAV scroll
 const navbar = document.getElementById('navbar');
-const mobileFloat = document.getElementById('mobileMenuFloat');
 
 window.addEventListener('scroll', () => {
-  const current = window.scrollY;
-  navbar.classList.toggle('scrolled', current > 20);
-  if (window.innerWidth <= 768) {
-    if (current > 80) {
-      navbar.classList.add('nav-hidden');
-      mobileFloat.classList.add('visible');
-    } else {
-      navbar.classList.remove('nav-hidden');
-      mobileFloat.classList.remove('visible');
-    }
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
 });
+
+// Ver más / Ver menos
+function toggleVerMas() {
+  const extra = document.getElementById('quienesExtra');
+  const btn = document.getElementById('verMasBtn');
+  const open = extra.classList.toggle('open');
+  btn.textContent = open ? 'Ver menos ↑' : 'Ver más ↓';
+}
 
 // Mobile menu
 function toggleMenu() {
