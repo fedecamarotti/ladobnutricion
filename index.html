@@ -129,6 +129,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
   align-items: center;
   justify-content: center;
   background: var(--white);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-logo {
@@ -175,11 +178,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.15); }
 section { padding: 4rem 5%; }
 
 .section-title {
-  font-family: 'LemonMilk', 'DM Sans', sans-serif;
-  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--dark);
@@ -733,8 +734,8 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- CONOCENOS (ex INBODY) -->
 <section id="inbody">
-  <h2 class="section-title reveal">CONOCENOS</h2>
-  <p class="reveal" style="text-align:center; max-width:640px; margin: -2.5rem auto 2rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé tu verdadera composición corporal con nuestro sistema <strong>InBody</strong> y armá un plan a tu medida.</p>
+  <h2 class="section-title reveal">Comenzá tu cambio</h2>
+  <p class="reveal" style="text-align:center; max-width:900px; white-space:nowrap; margin: -2.5rem auto 2rem; font-size:1rem; line-height:1.85; color:var(--text);">Conocé tu verdadera composición corporal con nuestro sistema <strong>InBody</strong> y armá un plan a tu medida.</p>
   <div class="video-wrapper reveal" id="videoWrapper" onclick="playVideo()">
     <img class="video-thumb" src="images/previainbody.png" alt="Video InBody">
     <div class="play-btn">
@@ -746,7 +747,7 @@ footer a { color: var(--lime); text-decoration: none; }
 
 <!-- CÓMO TRABAJAMOS -->
 <section id="como">
-  <h2 class="section-title reveal">¿Cómo trabajamos?</h2>
+  <h2 class="section-title reveal">Cómo trabajamos</h2>
   <div class="cards">
     <div class="card reveal">
       <h3>Analizamos tu composición corporal</h3>
@@ -804,8 +805,8 @@ footer a { color: var(--lime); text-decoration: none; }
     </div>
     <div class="stat-item reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      <span class="stat-number">100%</span>
-      <span class="stat-label">planes personalizados</span>
+      <span class="stat-number"><strong>Planes</strong></span>
+      <span class="stat-label">100% personalizados</span>
     </div>
   </div>
 </section>
@@ -881,7 +882,7 @@ footer a { color: var(--lime); text-decoration: none; }
 <section id="donde" style="padding:0;">
   <div class="donde-grid">
     <div class="donde-info reveal">
-      <h2>ENCONTRANOS</h2>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.5rem); color:var(--white); margin-bottom:2.5rem; letter-spacing:.02em; text-align:left;">Encontranos</h2>
       <div class="donde-links">
         <a class="donde-link" href="https://maps.google.com/?q=Charcas+3331+Palermo+Buenos+Aires" target="_blank">
           <svg viewBox="0 0 24 24" fill="#EA4335"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
